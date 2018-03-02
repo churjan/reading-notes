@@ -113,19 +113,18 @@ Object.definePro- perties()方法，为对象定义多个属性。
 
 使用 ECMAScript 5 的 Object.getOwnPropertyDescriptor()方法,可以取得给定属性的描述 符。
 
-
 ### 创建对象
 
 #### 工厂模式
 
 ```js
-function createPerson(name, age, job){ 
+function createPerson(name, age, job){
   var o = new Object();
-  o.name = name; 
+  o.name = name;
   o.age = age;
-  o.job = job; 
+  o.job = job;
   o.sayName = function(){
-    alert(this.name); 
+    alert(this.name);
   };
   return o;
 }
@@ -142,8 +141,8 @@ function Person(name, age, job){
   this.age = age;
   this.job = job;
   this.sayName = function(){
-    alert(this.name); 
-  }; 
+    alert(this.name);
+  };
 }
 var person1 = new Person("Nicholas", 29, "Software Engineer");
 var person2 = new Person("Greg", 27, "Doctor");
@@ -158,14 +157,14 @@ Person.prototype.name = "Nicholas";
 Person.prototype.age = 29;
 Person.prototype.job = "Software Engineer";
 Person.prototype.sayName = function(){
-  alert(this.name); 
+  alert(this.name);
 };
 
 var person1 = new Person();
 person1.sayName(); //"Nicholas"
 
 var person2 = new Person();
-person2.sayName(); //"Nicholas" 
+person2.sayName(); //"Nicholas"
 
 alert(person1.sayName == person2.sayName);//true
 ```
@@ -177,7 +176,7 @@ function Person(name, age, job){
    this.name = name;
    this.age = age;
    this.job = job;
-   this.friends = ["Shelby", "Court"]; 
+   this.friends = ["Shelby", "Court"];
 }
 
 Person.prototype = {
@@ -203,14 +202,14 @@ alert(person1.sayName === person2.sayName);
 
 ```js
 function Person(name, age, job){
-  //属性 
+  //属性
   this.name = name;
   this.age = age;
   this.job = job;
-  //方法 
+  //方法
   if (typeof this.sayName != "function"){
     Person.prototype.sayName = function(){
-      alert(this.name); 
+      alert(this.name);
     };
   }
 
@@ -251,6 +250,129 @@ o.sayName = function(){
 }
 ```
 
+### 继承
+
+继承是OO语言中的一个最为人津津乐道的概念。许多OO语言都支持两种继承方式:接口继承和实现继承。接口继承只继承方法签名,而实现继承则继承实际的方法。如前所述,由于函数没有签名,在ECMAScript中无法实现接口继承。ECMAScript只支持实现继承,而且其实现继承主要是依靠原型链来实现的。
+
+#### 原型链
+
+```js
+function SuperType(){
+  this.property = true;
+}
+SuperType.prototype.getSuperValue = function(){
+  return this.property;
+};
+function SubType(){
+  this.subproperty = false;
+}
+
+//继承了 SuperType
+SubType.prototype = new SuperType();
+SubType.prototype.getSubValue = function (){
+  return this.subproperty;
+};
+var instance = new SubType();
+alert(instance.getSuperValue());
+//true
+```
+
+#### 借用构造函数
+
+```js
+function SuperType(){
+  this.colors = ["red", "blue", "green"];
+}
+function SubType(){
+//继承了
+SuperType SuperType.call(this);
+}
+var instance1 = new SubType();
+instance1.colors.push("black");
+alert(instance1.colors); //"red,blue,green,black"
+
+var instance2 = new SubType();
+alert(instance2.colors); //"red,blue,green"
+```
+
+#### 组合继承
+
+```js
+function SuperType(name){
+  this.name = name;
+  this.colors = ["red", "blue", "green"];
+}
+SuperType.prototype.sayName = function(){
+  alert(this.name);
+};
+function SubType(name, age){
+  //继承属性
+  SuperType.call(this, name);
+  this.age = age;
+}
+//继承方法
+SubType.prototype = new SuperType(); SubType.prototype.constructor = SubType; SubType.prototype.sayAge = function(){
+  alert(this.age);
+};
+var instance1 = new SubType("Nicholas", 29); instance1.colors.push("black");
+alert(instance1.colors); //"red,blue,green,black"
+instance1.sayName(); //"Nicholas";
+instance1.sayAge(); //29
+
+var instance2 = new SubType("Greg", 27);
+alert(instance2.colors); //"red,blue,green"
+instance2.sayName(); //"Greg";
+instance2.sayAge(); //27
+```
+
+#### 原型式继承
+
+```js
+function object(o){
+  function F(){}
+  F.prototype = o;
+  return new F();
+}
+```
+
+#### 寄生式继承
+
+```js
+function createAnother(original){
+  var clone = object(original); //通过调用函数创建一个新对象
+  clone.sayHi = function(){ //以某种方式来增强这个对象
+  alert("hi");
+};
+return clone; //返回这个对象
+}
+```
+
+#### 寄生组合式继承
+
+```js
+function inheritPrototype(subType, superType){
+  var prototype = object(superType.prototype); prototype.constructor = subType;
+  subType.prototype = prototype;
+}
+```
+
+```js
+function SuperType(name){
+  this.name = name; this.colors = ["red", "blue", "green"];
+}
+SuperType.prototype.sayName = function(){
+  alert(this.name);
+};
+function SubType(name, age){
+  SuperType.call(this, name);
+  this.age = age;
+}
+inheritPrototype(SubType, SuperType);
+SubType.prototype.sayAge = function(){
+  alert(this.age);
+};
+```
+
 ## 第七章 函数表达式
 
 ### 闭包
@@ -266,9 +388,9 @@ o.sayName = function(){
 function MyObject(){
   //私有变量和私有函数 var privateVariable = 10;
   function privateFunction(){
-    return false; 
+    return false;
   }
-  //特权方法 
+  //特权方法
   this.publicMethod = function (){
     privateVariable++;
     return privateFunction();
