@@ -13,12 +13,25 @@
 ### 1 半透明边框
 
 ```css
-border: 10px solid rgba(255,255,255,.1);
+border: 10px solid hsla(0,0%,100%,.5);
+background: white;
 background-clip: padding-box;  /*背景会延伸到边框所在的区域下层。/
 ```
 
 ![](/images/semi-transparent-borders.png)
 
+### 2 多重边框
+
+```css
+background: yellowgreen;
+/*box-shadow 是层层叠加的，第一层投影位于最顶
+层，依次类推*/
+box-shadow: 0 0 0 10px #655,
+            0 0 0 15px deeppink,
+            0 2px 5px 15px rgba(0,0,0,.6);
+```
+
+![](/images/mutiple-borders.png)
 
 
 
