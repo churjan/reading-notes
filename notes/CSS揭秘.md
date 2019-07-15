@@ -17,19 +17,7 @@ border: 10px solid rgba(255,255,255,.1);
 background-clip: padding-box;  /*背景会延伸到边框所在的区域下层。/
 ```
 
-<style type="text/css">
-.semi-transparent-borders{
-  width:200px;
-  height:200px;
-  background: #fff;
-  border: 10px solid rgba(255,255,255,.1);
-  color:#000;
-  padding:10px;
-  box-sizing:border-box;
-  background-clip: padding-box; 
-}
-</style>
-<div  class="semi-transparent-borders">
+<div style="width:200px;height:200px;background: #fff;border: 10px solid rgba(255,255,255,.1);color:#000;padding:10px;box-sizing:border-box;background-clip: padding-box;">
 我有一个透明的边框
 </div>
 
