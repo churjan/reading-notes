@@ -15,12 +15,14 @@
 ```css
 border: 10px solid hsla(0,0%,100%,.5);
 background: white;
-background-clip: padding-box;  /*背景会延伸到边框所在的区域下层。/
+background-clip: padding-box;  /*默认值是border-box,背景会延伸到边框所在的区域下层。/
 ```
 
 ![](/images/semi-transparent-borders.png)
 
 ### 2 多重边框
+
+box-shadow方案
 
 ```css
 background: yellowgreen;
@@ -29,6 +31,14 @@ background: yellowgreen;
 box-shadow: 0 0 0 10px #655,
             0 0 0 15px deeppink,
             0 2px 5px 15px rgba(0,0,0,.6);
+```
+
+outline方案（它只适用于双层“边框”的场景）
+
+```css
+background: yellowgreen;
+border: 10px solid #655;
+outline: 5px solid deeppink;
 ```
 
 ![](/images/mutiple-borders.png)
