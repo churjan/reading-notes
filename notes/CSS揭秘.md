@@ -43,7 +43,7 @@ outline: 5px solid deeppink;
 
 ![](/images/mutiple-borders.png)
 
-### 灵活的背景定位
+### 3 灵活的背景定位
 
 background-position 的扩展语法方案
 
