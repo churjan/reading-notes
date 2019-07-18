@@ -43,8 +43,32 @@ outline: 5px solid deeppink;
 
 ![](/images/mutiple-borders.png)
 
+### 灵活的背景定位
 
+background-position 的扩展语法方案
 
+```css
+padding: 10px;
+background: url(code-pirate.svg) no-repeat #58a;
+background-position: right 10px bottom 10px;
+```
+
+background-origin 方案
+
+```css
+padding: 10px;
+background: url(code-pirate.svg) no-repeat #58a;
+background-position: right 10px bottom 10px;
+```
+
+calc() 方案
+
+```css
+background: url("code-pirate.svg") no-repeat;
+background-position: calc(100% - 20px) calc(100% - 10px);
+```
+
+![](/images/extended-bg-position.png)
 
 
 
