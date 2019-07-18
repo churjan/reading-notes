@@ -70,6 +70,21 @@ background-position: calc(100% - 20px) calc(100% - 10px);
 
 ![](/images/extended-bg-position.png)
 
+### 4 边框内圆角
+
+描边并不会跟着元素的圆角走,但 box-shadow 却是会的
+
+```css
+background: tan;
+border-radius: .8em;
+padding: 1em;
+box-shadow: 0 0 0 .6em #655;
+outline: .6em solid #655;
+```
+![](/images/inner-border.png)
+
+
+
 
 
 
