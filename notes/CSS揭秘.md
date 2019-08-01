@@ -137,5 +137,44 @@ background-image: repeating-linear-gradient(30deg,
 height: 100vh;
 ```
 
+### 6 复杂的背景图案
 
+网格
 
+![](/images/blueprint.png)
+
+```css
+background: #58a;
+background-image: linear-gradient(white 2px, transparent 0),
+                  linear-gradient(90deg, white 2px, transparent 0),
+                  linear-gradient(hsla(0,0%,100%,.3) 1px, transparent 0),
+                  linear-gradient(90deg, hsla(0,0%,100%,.3) 1px, transparent 0);
+background-size: 50px 50px, 50px 50px,
+                 10px 10px, 10px 10px;
+```
+
+波点
+
+![](/images/polka.png)
+
+```css
+background: #655;
+background-image: radial-gradient(tan 20%, transparent 0),
+                  radial-gradient(tan 20%, transparent 0);
+background-size: 30px 30px;
+background-position: 0 0, 15px 15px;
+```
+
+棋盘
+
+![](/images/checkerboard.png)
+
+```css
+background: #eee;
+background-image: 
+	linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 0, transparent 75%, rgba(0,0,0,.25) 0),
+	linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 0, transparent 75%, rgba(0,0,0,.25) 0);
+background-position: 0 0, 15px 15px;
+background-size: 30px 30px;
+min-height: 100%;
+```
