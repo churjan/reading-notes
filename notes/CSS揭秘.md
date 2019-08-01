@@ -86,14 +86,56 @@ outline: .6em solid #655;
 
 ### 5 条纹背景
 
+水平条纹
+
 ![](/images/horizontal-stripes.png)
 
 ```css
-background: linear-gradient(#fb3 50%, #58a 0);
+background: linear-gradient(#fb3 50%, #58a 0);/*默认to bottom 角度顺时针增加*/
 background-size: 100% 30px;
 ```
 
+垂直条纹
 
+![](/images/vertical-stripes.png)
+
+```css
+background: linear-gradient(to right, #fb3 50%, #58a 0);/*或90deg*/
+background-size: 30px 100%;
+```
+
+斜向条纹
+
+![](/images/diagonal-stripes.png)
+
+每条条纹长度为15px
+
+```css
+background: linear-gradient(45deg,
+  #fb3 25%, #58a 0, #58a 50%,
+  #fb3 0, #fb3 75%, #58a 0);
+background-size: 42.426406871px 42.426406871px;
+```
+
+更好的斜向条纹
+
+
+```css
+background: repeating-linear-gradient(45deg,
+  #fb3, #fb3 15px, #58a 0, #58a 30px);
+```
+
+灵活的同色系条纹
+
+![](/images/subtle-stripes.png)
+
+```css
+background: #58a;
+background-image: repeating-linear-gradient(30deg, 
+              hsla(0,0%,100%,.1), hsla(0,0%,100%,.1) 15px,
+              transparent 0, transparent 30px);
+height: 100vh;
+```
 
 
 
