@@ -12,15 +12,17 @@
 
 ### 1 半透明边框
 
+![](/images/semi-transparent-borders.png)
+
 ```css
 border: 10px solid hsla(0,0%,100%,.5);
 background: white;
 background-clip: padding-box;  /*默认值是border-box,背景会延伸到边框所在的区域下层。/
 ```
 
-![](/images/semi-transparent-borders.png)
-
 ### 2 多重边框
+
+![](/images/mutiple-borders.png)
 
 box-shadow方案
 
@@ -41,9 +43,9 @@ border: 10px solid #655;
 outline: 5px solid deeppink;
 ```
 
-![](/images/mutiple-borders.png)
-
 ### 3 灵活的背景定位
+
+![](/images/extended-bg-position.png)
 
 background-position 的扩展语法方案
 
@@ -68,9 +70,9 @@ background: url("code-pirate.svg") no-repeat;
 background-position: calc(100% - 20px) calc(100% - 10px);
 ```
 
-![](/images/extended-bg-position.png)
-
 ### 4 边框内圆角
+
+![](/images/inner-border.png)
 
 描边并不会跟着元素的圆角走,但 box-shadow 却是会的
 
@@ -81,9 +83,15 @@ padding: 1em;
 box-shadow: 0 0 0 .6em #655;
 outline: .6em solid #655;
 ```
-![](/images/inner-border.png)
 
+### 5 条纹背景
 
+![](/images/horizontal-stripes.png)
+
+```css
+background: linear-gradient(#fb3 50%, #58a 0);
+background-size: 100% 30px;
+```
 
 
 
