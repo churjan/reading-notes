@@ -187,7 +187,19 @@ min-height: 100%;
 
 ```css
 figure {
-width: min-content;
-margin: auto; }
+  width: min-content;
+  margin: auto;
+}
 ```
 
+39 满幅的背景，定宽的内容
+
+![](/images/fluid-fixed.png)
+
+```css
+/* 假设最小宽度是900px */
+.sec{
+  padding: 0 calc(50% - 450px);
+  background: #333; 
+}
+```
