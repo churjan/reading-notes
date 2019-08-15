@@ -178,3 +178,16 @@ background-position: 0 0, 15px 15px;
 background-size: 30px 30px;
 min-height: 100%;
 ```
+
+### 第7章 结构与布局
+
+36 自适应内部元素
+
+![](/images/intrinsic-sizing.png)
+
+```css
+figure {
+width: min-content;
+margin: auto; }
+```
+
