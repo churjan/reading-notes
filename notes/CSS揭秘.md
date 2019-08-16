@@ -203,3 +203,43 @@ figure {
   background: #333; 
 }
 ```
+
+40 垂直居中
+
+![](/images/vertical-centering-abs.png)
+
+需要知道宽高
+
+```css
+main {
+  position: absolute;
+  top: calc(50% - 3em);
+  left: calc(50% - 9em);
+  width: 18em;
+  height: 6em;
+}
+```
+
+不需要知道宽高
+
+```css
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+基于 Flexbox 的解决方案
+
+```css
+body {
+  display: flex;
+  min-height: 100vh;
+}
+main {
+  margin: auto;
+}
+```
+
