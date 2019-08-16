@@ -243,3 +243,29 @@ main {
 }
 ```
 
+41 紧贴底部的页脚
+
+![](/images/sticky-footer-fixed.png)
+
+
+固定高度的解决方案
+
+```css
+#wrapper {
+  min-height: calc(100vh - 7em); 
+}
+```
+
+更灵活的解决方案
+
+```css
+body {
+  display: flex;
+  flex-flow: column;
+  min-height:100vh;
+}
+main{
+  flex:1;
+}
+```
+
