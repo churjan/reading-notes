@@ -8,7 +8,7 @@
 |出版社|人民邮电出版社|
 |出版日期|2016年04月01日|
 
-## 第二章 背景与边框
+## 第2章 背景与边框
 
 ### 1 半透明边框
 
@@ -179,9 +179,9 @@ background-size: 30px 30px;
 min-height: 100%;
 ```
 
-### 第7章 结构与布局
+## 第7章 结构与布局
 
-36 自适应内部元素
+### 36 自适应内部元素
 
 ![](/images/intrinsic-sizing.png)
 
@@ -192,7 +192,7 @@ figure {
 }
 ```
 
-39 满幅的背景，定宽的内容
+### 39 满幅的背景，定宽的内容
 
 ![](/images/fluid-fixed.png)
 
@@ -204,7 +204,7 @@ figure {
 }
 ```
 
-40 垂直居中
+### 40 垂直居中
 
 ![](/images/vertical-centering-abs.png)
 
@@ -243,7 +243,7 @@ main {
 }
 ```
 
-41 紧贴底部的页脚
+### 41 紧贴底部的页脚
 
 ![](/images/sticky-footer-fixed.png)
 
