@@ -210,7 +210,7 @@ div:nth-of-type(4) { border-radius: 0 100% 100% 0 / 50%; }
 
 四分之一圆
 
-![](/images/hquarter-ellipse.png)
+![](/images/quarter-ellipse.png)
 
 ```css
 border-radius: 100% 0 0 0;
