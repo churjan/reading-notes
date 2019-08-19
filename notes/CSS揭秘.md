@@ -250,7 +250,33 @@ border-radius: 100% 0 0 0;
 }
 ```
 
+### 11 菱形图片
 
+![](/images/diamond-images.png)
+
+基于变形的方案
+
+```css
+.picture {
+  width: 400px;
+  transform: rotate(45deg);
+  overflow: hidden; }
+.picture > img {
+  max-width: 100%;
+  transform: rotate(-45deg) scale(1.42);
+}
+```
+
+裁切路径方案
+
+```css
+img {
+  clip-path: polygon(50% 0, 100% 50%,50% 100%, 0 50%);
+  transition: 1s clip-path; }
+img:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+```
 
 
 
