@@ -179,6 +179,66 @@ background-size: 30px 30px;
 min-height: 100%;
 ```
 
+## 第3章 形状
+
+### 9 自适应的椭圆
+
+![](/images/ellipse.png)
+
+```css
+border-radius:50%;
+```
+
+半圆
+
+![](/images/half-ellipse.png)
+
+```css
+div {
+	display: inline-block;
+	width: 16em;
+	height: 10em;
+	margin: 1em;
+	background: #fb3;
+	border-radius: 50% / 100% 100% 0 0;
+}
+
+div:nth-of-type(2) { border-radius: 50% / 0 0 100% 100%; }
+div:nth-of-type(3) { border-radius: 100% 0 0 100% / 50%; }
+div:nth-of-type(4) { border-radius: 0 100% 100% 0 / 50%; }
+```
+
+四分之一圆
+
+![](/images/hquarter-ellipse.png)
+
+```css
+border-radius: 100% 0 0 0;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 第7章 结构与布局
 
 ### 36 自适应内部元素
