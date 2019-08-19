@@ -216,6 +216,40 @@ div:nth-of-type(4) { border-radius: 0 100% 100% 0 / 50%; }
 border-radius: 100% 0 0 0;
 ```
 
+### 10 平行四边形
+
+![](/images/parallelograms.png)
+
+嵌套元素方案
+
+```html
+<a href="#yolo" class="button">
+<div>Click me</div>
+</a>
+```
+
+```css
+.button { transform: skewX(-45deg); }
+.button > div { transform: skewX(45deg); }
+```
+
+伪元素方案
+
+```css
+.button {
+  position: relative;
+  /* 其他的文字颜色、内边距等样式…… */
+}
+.button::before {
+  content: ''; /* 用伪元素来生成一个矩形 */
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  background: #58a;
+  transform: skew(45deg);
+}
+```
+
 
 
 
