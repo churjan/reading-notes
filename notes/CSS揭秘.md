@@ -351,6 +351,24 @@ position: relative;
 }
 ```
 
+## 第4章 视觉效果
+
+### 15 单侧投影
+
+![](/images/shadow-one-side.png)
+
+```css
+box-shadow: 0 5px 4px -4px black;
+```
+
+### 16 不规则投影
+
+
+![](/images/drop-shadow.png)
+
+```css
+filter: drop-shadow(2px 2px 10px rgba(0,0,0,.5));
+```
 
 
 
