@@ -298,8 +298,25 @@ div {
 	font: 150%/1.6 Baskerville, Palatino, serif;
 }
 ```
+### 13 梯形标签页
 
+![](/images/trapezoid.png)
 
+```css
+.tab {
+position: relative;
+ display: inline-block;
+ padding: .5em 1em .35em;
+ color: white; }
+.tab::before {
+ content: ''; /* 用伪元素来生成一个矩形 */
+ position: absolute;
+ top: 0; right: 0; bottom: 0; left: 0;
+ z-index: -1;
+ background: #58a;
+ transform: perspective(.5em) rotateX(5deg);
+}
+```
 
 
 
