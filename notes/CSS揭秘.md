@@ -422,6 +422,7 @@ button:before {
 <label for="awesome">Awesome!</label>
 ```
 
+![](/images/custom-checkboxes.png)
 
 ```css
 input[type="checkbox"] + label::before {
