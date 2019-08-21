@@ -370,8 +370,81 @@ box-shadow: 0 5px 4px -4px black;
 filter: drop-shadow(2px 2px 10px rgba(0,0,0,.5));
 ```
 
+## 第6章  用户体验
+
+### 30 扩大可点击区域
+
+![](/images/hit-area.png)
+
+box-shadow方案
+
+```css
+button {
+	padding: .3em .5em;
+	border: 10px solid transparent;
+	border-radius: 50%;
+	background: #58a;
+	background-clip: padding-box;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;
+	color: white;
+	font: bold 150%/1 sans-serif;
+	cursor: pointer;
+}
+```
+
+伪元素方案
+
+```css
+button {
+	position: relative;
+	padding: .3em .5em;
+	background: #58a;
+	border-radius: 50%;
+	border: 1px solid rgba(0,0,0,.3);
+	box-shadow:  0 .1em .2em -.05em rgba(0,0,0,.5);
+	color: white;
+	font: bold 150%/1 sans-serif;
+	cursor: pointer;
+}
+
+button:before {
+	content: '';
+	position: absolute;
+	top: -10px; right: -10px;
+	bottom: -10px; left: -10px;
+}
+```
+
+### 31 自定义复选框
+
+```html
+<input type="checkbox" id="awesome" />
+<label for="awesome">Awesome!</label>
+```
 
 
+```css
+input[type="checkbox"] + label::before {
+  content: '\a0'; /* 不换行空格 */
+  display: inline-block;
+  vertical-align: .2em;
+  width: .8em;
+  height: .8em;
+  margin-right: .2em;
+  border-radius: .2em;
+  background: silver;
+  text-indent: .15em;
+  line-height: .65;
+}
+input[type="checkbox"]:checked + label::before {
+  content: '\2713';
+  background: yellowgreen;
+}
+input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+```
 
 
 
