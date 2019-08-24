@@ -473,6 +473,13 @@ box-shadow 方案
 box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);
 ```
 
+### 33 通过模糊来弱化背景
+
+![](/images/emphasizing.png)
+
+```css
+filter: blur(10px);
+```
 
 
 
