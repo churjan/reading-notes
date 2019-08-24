@@ -447,6 +447,32 @@ input[type="checkbox"] {
 }
 ```
 
+### 32 通过阴影来弱化背景
+
+![](/images/modal.png)
+
+伪元素方案
+
+```css
+body.dimmed::before {
+position: fixed;
+top: 0;
+right: 0;
+ bottom: 0;
+left: 0;
+z-index: 1;
+background: rgba(0,0,0,.8);
+}
+```
+
+box-shadow 方案
+
+缺点：不能阻止点击穿透
+
+```css
+box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);
+```
+
 
 
 
