@@ -612,3 +612,39 @@ main{
 }
 ```
 
+## 第8章 过渡与动画
+
+### 43 逐帧动画
+
+```html
+<div class="loader">Loading...</div>
+```
+
+![](/images/loader.png)
+
+```css
+.loader {
+  width: 100px; height: 100px;
+  background: url(img/loader.png) 0 0;
+  /* 把文本隐藏起来 */
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden; 
+}
+@keyframes loader {
+  to {
+    background-position: -800px 0;  
+  } 
+}
+.loader {
+  width: 100px; height: 100px;
+  background: url(img/loader.png) 0 0;
+  animation: loader 1s infinite linear;
+  /* 把文本隐藏起来 */
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+```
+
+
