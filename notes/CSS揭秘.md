@@ -647,4 +647,33 @@ main{
 }
 ```
 
+### 45 打字动画
+
+```html
+<h1>CSS is awesome!</h1>
+```
+
+![](/images/typing.png)
+
+```css
+@keyframes typing {
+	from { width: 0 }
+}
+
+@keyframes caret {
+	50% { border-right-color: transparent; }
+}
+
+h1 {
+	font: bold 200% Consolas, Monaco, monospace;
+	/*width: 8.25em;*/
+	width: 15ch;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: .05em solid;
+	animation: typing 8s steps(15),
+	           caret 1s steps(1) infinite;
+}
+```
+
 
